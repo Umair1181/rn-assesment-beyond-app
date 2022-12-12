@@ -11,7 +11,7 @@ import {useDispatch, useSelector} from 'react-redux';
 // library imports
 import {SliderBox} from 'react-native-image-slider-box';
 // Api calls
-import {FetchSingleProductData} from '../../requests/MainScreen';
+import {FetchSingleProductData} from '../../requests/Products';
 // global componenets
 import {Layout, Loader} from '../../components';
 import {Colors} from '../../global';

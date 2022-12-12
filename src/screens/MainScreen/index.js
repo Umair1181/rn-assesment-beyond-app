@@ -5,7 +5,7 @@ import {Text, FlatList, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 // Api calls
-import {FetchData} from '../../requests/MainScreen';
+import {FetchData} from '../../requests/Products';
 
 // global componenets
 import {Layout, Header, Loader} from '../../components';

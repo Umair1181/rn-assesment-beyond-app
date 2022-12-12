@@ -1,17 +1,15 @@
-import {useDispatch} from 'react-redux';
 import axios from 'axios';
-import {Action_SetRecords} from '../redux/dataReducer';
+import {BASEURL} from '@env';
 // Api call For Data Fetching
 export const FetchData = async (page, onResponse) => {
   let limit = 10;
   let skip = page * limit;
   axios
-    .get(`https://dummyjson.com/products?limit=10&skip=${skip}`)
+    .get(`${BASEURL}/products?limit=10&skip=${skip}`)
     .then(res => {
       onResponse(res.data);
     })
     .then(err => {
-      console.log(err?.response?.data);
       onResponse(false);
     });
 };
@@ -19,13 +17,11 @@ export const FetchData = async (page, onResponse) => {
 // Api call For Single Product --START--
 export const FetchSingleProductData = async (id, onResponse) => {
   axios
-    .get(`https://dummyjson.com/products/${id}`)
+    .get(`${process.env.BASEURL}/products/${id}`)
     .then(res => {
-      console.log('res.data: ', res.data);
       onResponse(res.data);
     })
     .then(err => {
-      console.log(err?.response?.data);
       onResponse(false);
     });
 };
